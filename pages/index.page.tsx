@@ -127,8 +127,13 @@ const Home = ({ treeData }: any) => {
               const { key, type } = node as any;
               if (type === "file") {
                 router.push(key);
-                const parent: any = window.parent;
-                parent?.daoPaas?.openFile(key);
+                window.parent.postMessage(
+                  {
+                    isOpenFile: true,
+                    path: "algorithm-visualizer/algorithms" + key,
+                  },
+                  "*"
+                );
               }
             }}
           />
