@@ -18,7 +18,7 @@ function generateTreeData(data: any[]) {
         item.children.filter((file: any) => {
           if (file.type === "file") {
             const ext = extension(file.title);
-            return ["js"].includes(ext);
+            return ["cpp", "js"].includes(ext);
           }
           return true;
         })

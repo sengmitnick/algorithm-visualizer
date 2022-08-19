@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useMount } from "ahooks";
+import { extension } from 'common/util';
 import { runInAction, makeAutoObservable } from "mobx";
 import { observer } from "mobx-react-lite";
 import { AlgorithmApi, TracerApi } from "apis";
@@ -48,10 +49,15 @@ class Player {
         algorithm,
         filename
       );
+      const ext = extension(filename);
       const code = res.data.file as string;
-      const commands = await TracerApi.js({ code }, this.tracerApiSource.token);
-      this.reset(commands);
-      this.next();
+      if (ext in TracerApi) {
+        const commands = await TracerApi[ext as 'cpp' | 'js']({ code }, this.tracerApiSource.token);
+        this.reset(commands);
+        this.next();
+      } else {
+        console.log('Language Not Supported');
+      }
     } catch (error) {
       console.error(error);
     } finally {
