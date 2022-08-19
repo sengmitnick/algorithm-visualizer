@@ -9,7 +9,8 @@ const AlgorithmApi = {
 };
 
 const TracerApi = {
-  cpp: (data: any, cancelToken: CancelToken) => request.post('/api/tracers/cpp', data, { cancelToken }),
+  cpp: (data: any, cancelToken: CancelToken) =>
+    request.post("/api/tracers/cpp", data, { cancelToken }).then((r) => r.data),
   js: ({ code }: any, cancelToken: CancelToken) =>
     new Promise<any>((resolve, reject) => {
       const worker = new Worker("/tracers/js/worker.js");
