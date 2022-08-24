@@ -1,14 +1,24 @@
-// import visualization libraries {
+/**
+ * 冒泡排序（英语：Bubble Sort）又称为泡式排序，是一种简单的排序算法。
+ * 它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。
+ * 走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。
+ * 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。
+ * 
+ * https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F
+**/
+
+// 导入可视化库 {
 #include "algorithm-visualizer.h"
 // }
 
+// 定义输入数组变量
 #define N   15
 #define MIN 1
 #define MAX 20
 
 void BubbleSort(int start, int end, int array[]);
 
-// define tracer variables {
+// 定义跟踪变量 {
 void PrintlnArray(const char* msg, int count,int array[]);
 ChartTracer chartTracer("ChartTracer");
 Array1DTracer array1DTracer("Array1DTracer");
@@ -16,7 +26,7 @@ LogTracer logger("LogTracer");
 // }
 
 int main() {
-    // define tracer variables {
+    // 定义跟踪变量 {
     int array[N];
     Randomize::Array1D<int>(N, *(new Randomize::Integer(MIN, MAX))).fill(&array[0]);
     array1DTracer.set(array);
