@@ -22,7 +22,9 @@ export default async function handler(
       path.join(dir, "visualization.json"),
       { encoding: "utf-8" }
     );
-    await promisify(fs.rmdir)(dir)
+    setTimeout(() => {
+      execute(`rm -rf ${dir}`)
+    }, 66);
     res.status(200).json(JSON.parse(commands));
   } catch (error: any) {
     res.status(404).json({ error: errorToJSON(error) });
