@@ -62,7 +62,7 @@ async function generateTree(root: string) {
     };
     //同步拿到文件目录下的所有文件名
     const files = (await promisify(fs.readdir)(dir)).filter(
-      (file) => ![".images", ".validate"].includes(file)
+      (file) => file.indexOf('.') !== 0
     );
     result.children = [];
     for (let index = 0; index < files.length; index++) {
