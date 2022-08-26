@@ -30,7 +30,6 @@ function generateTreeData(data: any[]) {
 
 async function generateTree(root: string) {
   const filesNameArr = [];
-  let cur = 0;
   // 用个hash队列保存每个目录的深度
   const mapDeep: any = {};
   mapDeep[root] = 0;
@@ -107,22 +106,22 @@ const Home = ({ treeData }: any) => {
   const size = useSize(ref);
 
   return (
-    <div className="w-full h-full flex flex-col pt-20 px-10 pb-3">
+    <div className="w-full h-full flex flex-col pt-10 px-10 pb-3">
       <Typography>
         <Title>算法可视化</Title>
         <Paragraph>
           点击下面某一个文件进入可视化界面，在编辑器修改该文件然后重新点击
-          <Text code>build 按钮</Text>即可查看效果
+          <Text code> build 按钮</Text>即可查看效果
         </Paragraph>
       </Typography>
-      <div ref={ref} className="w-full flex-1">
+      <div ref={ref} className="w-full mt-4 flex-1">
         {!!size?.height && (
           <DirectoryTree
             height={size?.height}
             itemHeight={28}
             className="w-full"
-            defaultExpandAll
-            treeData={treeData}
+            icon={<></>}
+            treeData={treeData[0].children}
             onSelect={(_, { node }) => {
               const { key, type } = node as any;
               if (type === "file") {
