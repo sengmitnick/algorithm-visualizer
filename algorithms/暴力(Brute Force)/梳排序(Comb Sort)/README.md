@@ -10,10 +10,13 @@
 
 ## 时间空间复杂度
 
-| 名称                  | 最优时间复杂度     | 时间复杂度            | 最差时间复杂度        | 空间复杂度  | 是否稳定   | 注释  |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **冒泡排序**           | ![](https://latex.codecogs.com/svg.latex?O(n\,log\,n)) | ![](https://latex.codecogs.com/svg.latex?O(n^2/2^p))       | ![](https://latex.codecogs.com/svg.latex?O(n^2))       | ![](https://latex.codecogs.com/svg.latex?O(1))         | No       |           |
+|  |  |
+| --- | :--- |
+| 平均时间复杂度 | ![](https://latex.codecogs.com/svg.latex?\Omega(n^{2}/2^{p})) 其中p表示增量 |
+| 最坏时间复杂度 | ![](https://latex.codecogs.com/svg.latex?\Omega(n^{2})) |
+| 最优时间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(n\log&space;n)) |
+| 空间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(1))  |
 
 ## 参考
-* [Wikipedia](https://en.wikipedia.org/wiki/Comb_sort)
+* [Wikipedia](https://zh.m.wikipedia.org/zh-cn/%E6%A2%B3%E6%8E%92%E5%BA%8F)
 * [梳排序](https://baike.baidu.com/item/%E6%A2%B3%E6%8E%92%E5%BA%8F)

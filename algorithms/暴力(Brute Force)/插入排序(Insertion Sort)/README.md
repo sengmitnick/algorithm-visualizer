@@ -1,6 +1,6 @@
 # 插入排序（Insertion Sort）
 
-插入排序（Insertion Sort）是一种最简单的排序方法，其基本操作是将一条记录插入到已排好的有序表中，从而得到一个新的、记录数量增1的有序表。
+插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到![](https://latex.codecogs.com/svg.latex?O(1))的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间
 
 ![Algorithm Visualization](./Insertion_sort.gif)
 
@@ -8,9 +8,13 @@
 
 ## 时间空间复杂度
 
-| 名称                  | 最优时间复杂度     | 时间复杂度            | 最差时间复杂度        | 空间复杂度  | 是否稳定   | 注释  |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **插入排序**           | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
+|  |  |
+| --- | :--- |
+| 平均时间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(n^{2})) |
+| 最坏时间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(n^{2})) |
+| 最优时间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(n)) |
+| 空间复杂度 | 总共![](https://latex.codecogs.com/svg.latex?O(n))，需要辅助空间![](https://latex.codecogs.com/svg.latex?O(1))  |
+| 最佳解 | No |
 
 ## 参考
 
