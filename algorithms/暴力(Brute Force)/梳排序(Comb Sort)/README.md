@@ -1,9 +1,19 @@
-# Comb Sort
-Comb sort is a relatively simple sorting algorithm originally designed by Włodzimierz Dobosiewicz in 1980. Later it was rediscovered by Stephen Lacey and Richard Box in 1991. Comb sort improves on bubble sort. <br /><br />The basic idea is to eliminate turtles, or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously. Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
+# 梳排序（Comb sort）
 
-## Complexity
-* **Time**: worst ![](https://latex.codecogs.com/svg.latex?O(n^2)), best ![](https://latex.codecogs.com/svg.latex?O(n\,log\,n)), average ![](https://latex.codecogs.com/svg.latex?O(n^2/2^p)), where ![](https://latex.codecogs.com/svg.latex?p) is the number of increment)
-* **Space**: worst ![](https://latex.codecogs.com/svg.latex?O(1)) auxiliary
+梳排序（Comb sort）是一种由Wlodzimierz Dobosiewicz于1980年所发明的不稳定排序算法，并由Stephen Lacey和Richard Box于1991年四月号的Byte杂志中推广。
+梳排序是改良自冒泡排序和快速排序，其要旨在于消除乌龟，亦即在数组尾部的小数值，这些数值是造成冒泡排序缓慢的主因。
+相对地，兔子，亦即在数组前端的大数值，不影响冒泡排序的性能。
+在冒泡排序中，只比较数组中相邻的二项，即比较的二项的间距（Gap）是1，梳排序提出此间距其实可大于1，改自插入排序的希尔排序同样提出相同观点。
+梳排序中，开始时的间距设置为数组长度，并在循环中以固定比率递减，通常递减率设置为1.3。
+在一次循环中，梳排序如同冒泡排序一样把数组从首到尾扫描一次，比较及交换两项，不同的是两项的间距不固定于1。
+如果间距递减至1，梳排序假定输入数组大致排序好，并以冒泡排序作最后检查及修正。
 
-## References
+## 时间空间复杂度
+
+| 名称                  | 最优时间复杂度     | 时间复杂度            | 最差时间复杂度        | 空间复杂度  | 是否稳定   | 注释  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **冒泡排序**           | ![](https://latex.codecogs.com/svg.latex?O(n\,log\,n)) | ![](https://latex.codecogs.com/svg.latex?O(n^2/2^p))       | ![](https://latex.codecogs.com/svg.latex?O(n^2))       | ![](https://latex.codecogs.com/svg.latex?O(1))         | No       |           |
+
+## 参考
 * [Wikipedia](https://en.wikipedia.org/wiki/Comb_sort)
+* [梳排序](https://baike.baidu.com/item/%E6%A2%B3%E6%8E%92%E5%BA%8F)

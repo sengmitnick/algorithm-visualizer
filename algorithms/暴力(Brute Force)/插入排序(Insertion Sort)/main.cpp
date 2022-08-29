@@ -1,12 +1,9 @@
-/**
- * 插入排序（Insertion Sort）是一种最简单的排序方法，其基本操作是将一条记录插入到已排好的有序表中，从而得到一个新的、记录数量增1的有序表。
- *
- * https://baike.baidu.com/item/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F
- **/
+// 插入排序（Insertion Sort）
 
 // 导入可视化库 {
 #include "algorithm-visualizer.h"
 // }
+#include <sstream>
 
 // 定义输入数组变量
 #define N 15
