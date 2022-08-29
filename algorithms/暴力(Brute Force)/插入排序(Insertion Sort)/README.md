@@ -18,5 +18,6 @@ sort.
 
 ## References
 
+
 - [trekhleb/javascript-algorithms](https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/sorting/insertion-sort)
 - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
