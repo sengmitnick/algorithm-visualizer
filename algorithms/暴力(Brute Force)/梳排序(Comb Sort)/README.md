@@ -12,10 +12,10 @@
 
 |  |  |
 | --- | :--- |
-| 平均时间复杂度 | ![](https://latex.codecogs.com/svg.latex?\Omega(n^{2}/2^{p})) 其中p表示增量 |
-| 最坏时间复杂度 | ![](https://latex.codecogs.com/svg.latex?\Omega(n^{2})) |
-| 最优时间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(n\log&space;n)) |
-| 空间复杂度 | ![](https://latex.codecogs.com/svg.latex?O(1))  |
+| 平均时间复杂度 | $\Omega(n^{2}/2^{p})$ 其中p表示增量 |
+| 最坏时间复杂度 | $\Omega(n^{2})$ |
+| 最优时间复杂度 | $O(n\log n)$ |
+| 空间复杂度 | $O(1)$  |
 
 ## 参考
 * [Wikipedia](https://zh.m.wikipedia.org/zh-cn/%E6%A2%B3%E6%8E%92%E5%BA%8F)
