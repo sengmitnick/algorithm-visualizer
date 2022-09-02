@@ -1,33 +1,70 @@
-# Algorithm Visualizer
+# 算法可视化
 
-> Algorithm Visualizer is an interactive online platform that visualizes algorithms from code.
+> 通过该代码空间，可以把写出来的算法进行可视化，让你更清晰的知道该算法的运作原理。
 
-Learning an algorithm gets much easier with visualizing it. Don't get what we mean? Check it out:
+通过可视化算法，学习算法变得容易得多。以下通过几个小步骤，带你快速入门。
 
-[https://1024code.com/ide/C3Dmuxs](https://1024code.com/ide/C3Dmuxs)
+## 目录结构
 
-![](.images/README.png)
+.
+├── algorithm-visualizer                项目主体
+│   ├── algorithms                      算法文件夹
+│   │   ├── 分治(Divide and Conquer)     算法分类文件夹
+│   │   │   └── 计数排序（Counting sort） 具体某种算法
+│   │   │       ├── code.js             javascript实现代码
+│   │   │       ├── main.cpp            cpp实现代码
+│   │   │       └── README.md           该算法的一些介绍和参考文献
+│   ├── tmp                             算法临时文件夹，临时生成算法，如果Build失败会在这里有相关文件
+│   └── ...                             其他无关文件夹
+└── tmp                                 临时文件夹，存放环境安装的文件
 
-## Environment Initialization
+## 运行
 
-### cpp
+1. 点击运行按钮，等待项目运行起来后，打开输出窗口。首页是当前算法文件夹下已有的算法文件，点击某一个算法即可进入该算法的可视化页面。
 
-``` shell
-vi .1024nix
-### 添加 pkgs.curl.dev
-nix-shell .1024nix
+2. 进入可视化页面，默认运行Build，成功后点击播放即可查看可视化效果，也可以单步查看或者调整播放速度
 
-curl --create-dirs -o /usr/local/include/nlohmann/json.hpp -L "https://github.com/nlohmann/json/releases/download/v3.1.2/json.hpp"
-curl --create-dirs -o /usr/tmp/algorithm-visualizer.tar.gz -L "https://github.com/algorithm-visualizer/tracers.cpp/archive/v2.3.6.tar.gz"
-cd /usr/tmp
-mkdir algorithm-visualizer
-tar xvzf algorithm-visualizer.tar.gz -C algorithm-visualizer --strip-components=1
-cd /usr/tmp/algorithm-visualizer
-mkdir build
-cd build
-cmake ..
-make install
-### 测试环境是否安装成功
-g++ main.cpp -o Main -O2 -std=c++11 -lcurl -B "/var/empty/local"
-ALGORITHM_VISUALIZER=1 ./Main
+3. 编辑编辑器的算法文件，通过修改输入变量或其他地方，然后重新Build即可查看新修改的可视化效果
+
+PS: 目前Build失败还没有提示，不过会在算法临时文件夹输出失败的文件，可以通过gdb在Shell调试。
+
+## 如何写一个新的算法
+
+> 通过可视化库，让算法按照你的想法可视化起来～
+
+### CPP
+
+在算法文件夹中相应位置新建一个算法目录，新建main.cpp。可视化的实现基于可视化库，具体可以使用的API可以看下面的文档～
+
+```cpp
+// 导入可视化库 {
+#include "algorithm-visualizer.h"
+// }
+
+// 定义跟踪变量 {
+ChartTracer chartTracer("ChartTracer");
+Array1DTracer array1DTracer("Array1DTracer");
+LogTracer logger("LogTracer");
+// }
+
+
+int main() {
+    // 定义跟踪变量 {
+    int array[N];
+    Randomize::Array1D<int>(N, *(new Randomize::Integer(MIN, MAX))).fill(&array[0]);
+    array1DTracer.set(array);
+    array1DTracer.chart(chartTracer);
+    Layout::setRoot(VerticalLayout({ chartTracer, array1DTracer, logger }));
+    Tracer::delay();
+    // }
+
+    // TODO 这里写算法的具体实现和可视化库的插槽
+    // ...
+
+    return 0;
+}
 ```
+
+## algorithm-visualizer API
+
+https://github.com/algorithm-visualizer/algorithm-visualizer/wiki
