@@ -6,6 +6,7 @@
 
 ## 目录结构
 
+```
 .
 ├── algorithm-visualizer                项目主体
 │   ├── algorithms                      算法文件夹
@@ -17,14 +18,18 @@
 │   ├── tmp                             算法临时文件夹，临时生成算法，如果Build失败会在这里有相关文件
 │   └── ...                             其他无关文件夹
 └── tmp                                 临时文件夹，存放环境安装的文件
+```
 
 ## 运行
 
 1. 点击运行按钮，等待项目运行起来后，打开输出窗口。首页是当前算法文件夹下已有的算法文件，点击某一个算法即可进入该算法的可视化页面。
+   ![](https://1024-staging-1258723534.cos.ap-guangzhou.myqcloud.com/avatar/2022090210-HqIcxy9kxhKIfgVe.png)
 
 2. 进入可视化页面，默认运行Build，成功后点击播放即可查看可视化效果，也可以单步查看或者调整播放速度
+   ![](https://1024-staging-1258723534.cos.ap-guangzhou.myqcloud.com/avatar/2022090221-ZwT1lyyiqMpol1YG.png)
 
 3. 编辑编辑器的算法文件，通过修改输入变量或其他地方，然后重新Build即可查看新修改的可视化效果
+   ![](https://1024-staging-1258723534.cos.ap-guangzhou.myqcloud.com/avatar/2022090220-0ewed5Y4XAtj35yw.png)
 
 PS: 目前Build失败还没有提示，不过会在算法临时文件夹输出失败的文件，可以通过gdb在Shell调试。
 
@@ -67,4 +72,4 @@ int main() {
 
 ## algorithm-visualizer API
 
-https://github.com/algorithm-visualizer/algorithm-visualizer/wiki
+[https://github.com/algorithm-visualizer/algorithm-visualizer/wiki](https://github.com/algorithm-visualizer/algorithm-visualizer/wiki)
